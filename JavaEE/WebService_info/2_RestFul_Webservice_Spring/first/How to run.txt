@@ -1,0 +1,12 @@
+run this project on eclipse
+
+now go to crome
+
+and run it like
+
+http://localhost:8080/RestFulWebService/hello/Abc/15
+
+
+here "hello" is a request mapping for Rest Controller
+
+Abc and 15 are name and age respectively.

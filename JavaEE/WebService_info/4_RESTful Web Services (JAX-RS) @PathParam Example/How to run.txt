@@ -1,0 +1,3 @@
+go to crome
+
+http://localhost:8080/Rest_QueryParam/rest/player/Sachin/India

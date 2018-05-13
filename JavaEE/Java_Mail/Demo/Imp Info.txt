@@ -1,0 +1,1 @@
+Before running this example run fakeSMTP-2.0.jar. This is an executable jar file so you can run by double click on it.

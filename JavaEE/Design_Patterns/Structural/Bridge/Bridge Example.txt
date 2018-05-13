@@ -1,0 +1,92 @@
+interface Color
+{
+	void fill();
+}
+class Red implements Color
+{
+	public void fill()
+	{
+		// use red color
+	}
+}
+class Blue implements Color
+{
+	public void fill()
+	{
+		// use blue color
+	}
+}
+abstract class Shape  // abstraction or handle
+{
+	Color color;   // implementation or body
+	Shape(Color color)
+	{
+		this.color=color;
+	}
+	void fillColor()
+	{
+		if(color!=null)
+		{
+			color.fill();
+		}
+	}
+	abstract void draw();
+}
+class Circle extends Shape
+{
+	Circle(Color color)
+	{
+		super(color);
+	}
+	Circle()
+	{
+		super(null);
+	}
+	void draw()
+	{
+		fillColor();
+		// logic to draw Circle
+	}
+}
+
+	
+class Rect extends Shape
+{
+	Rect(Color color)
+	{
+		super(color);
+	}
+	Rect()
+	{
+		super(null);
+	}
+	void draw()
+	{
+		fillColor();
+		// logic to draw Rect
+	}
+}
+
+public class BridgeDemo
+{
+	public static void main(String args[])
+	{
+		Shape shape=new Rect(new Red());
+		shape.draw();
+
+		shape=new Circle(new Blue());
+		shape.draw();
+
+		shape=new Rect();
+		shape.draw();
+	}
+}
+
+
+
+
+
+
+
+
+

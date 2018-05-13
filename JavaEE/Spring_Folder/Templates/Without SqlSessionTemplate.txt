@@ -1,0 +1,32 @@
+try
+		{
+		Reader reader = Resources.getResourceAsReader("SqlMapConfig.xml");
+      SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);		
+      SqlSession session = sqlSessionFactory.openSession();
+      
+      Scanner sc=new Scanner(System.in);
+      System.out.println("enter name");
+      String name=sc.next();
+      System.out.println("enter desig");
+      String desig=sc.next();
+      System.out.println("enter salary");
+      int salary=sc.nextInt();
+      Employee e1=new Employee();
+            e1.setName(name);
+            e1.setDesig(desig);
+            e1.setSalary(salary);
+       // create table if it does not exist
+            session.update("Employee.update");
+      //Insert employee data      
+      session.insert("Employee.insert", e1);
+      System.out.println("record inserted successfully");
+      session.commit();
+      session.close();
+			
+   }
+
+        catch(Exception ee)
+        {
+        	System.out.println("in catch\t"+ee);
+        }
+}

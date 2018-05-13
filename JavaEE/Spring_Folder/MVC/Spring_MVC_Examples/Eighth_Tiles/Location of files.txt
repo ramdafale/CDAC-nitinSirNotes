@@ -1,0 +1,1 @@
+"tiles.xml","web.xml" and "spring-servlet.xml" in WEB-INF folder.

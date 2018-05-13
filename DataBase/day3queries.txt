@@ -1,0 +1,30 @@
+select e1.salary 
+from emp e1
+group by e1.salary 
+having count(*)>1;
+
+
+select
+deptname,e1.ename,e1.salary,count(*)
+from
+emp e1,emp e2 , dept d
+where
+e1.deptid=e2.deptid
+and
+e1.deptid=d.deptid
+and
+e1.salary<=e2.salary
+group by deptname,e1.ename,e1.salary
+having count(*)<=5
+order by deptname,salary desc;
+
+
+
+
+
+select ename,salary ,
+(select sum(salary) from emp i
+where (i.salary>o.salary or (i.salary=o.salary and i.eid<=o.eid))) running_salary
+from
+emp o
+order by salary desc,eid;

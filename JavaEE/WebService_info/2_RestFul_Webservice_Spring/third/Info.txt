@@ -1,0 +1,1 @@
+this example returns List from RestController. Run this example in crome browser.

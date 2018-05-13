@@ -1,0 +1,2 @@
+readExternal and writeExternal are called only for the class ( saveme ) which we are passing to ObjectOutputStream "write" method.
+

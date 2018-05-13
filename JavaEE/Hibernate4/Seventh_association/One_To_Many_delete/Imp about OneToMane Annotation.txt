@@ -1,0 +1,8 @@
+@OneToMany(fetch=FetchType.LAZY, targetEntity=Phone.class, cascade=CascadeType.ALL)
+@JoinColumn(name = "sid", referencedColumnName="STUDENT_ID")
+public Set<Phone> getStudentPhoneNumbers() {
+return this.studentPhoneNumbers;
+}
+
+
+the above annotation ensures that association table won't be created in this case. Hence when we say "session.delete(Student)" automatically all the phone details also will be deleted.

@@ -1,0 +1,39 @@
+Struts 2 Interceptors 
+
+Interceptor is an object that is invoked at the preprocessing and postprocessing of a request. 
+Interceptors are like servlet filters.
+
+Some of the inteceptors in struts2 are:
+
+params 
+Sets the request parameters on the action.
+
+validation 
+Provides validation support for actions
+
+conversionError 
+Places error information from converting strings to parameter types into the action's field errors.
+
+createSession 
+Automatically creates an HTTP session if one does not already exist.
+
+
+checkbox 
+Assists in managing check boxes by adding a parameter value of false for check boxes that are not checked.
+
+
+
+execAndWait 
+Sends the user to an intermediary waiting page while the action executes in the background.
+
+
+fileUpload 
+Facilitates easy file uploading.
+
+i18n 
+Keeps track of the selected locale during a user's session.
+
+logger 
+Provides simple logging by outputting the name of the action being executed.
+
+

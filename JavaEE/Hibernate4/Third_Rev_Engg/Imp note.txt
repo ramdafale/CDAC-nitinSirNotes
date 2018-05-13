@@ -1,0 +1,1 @@
+HibernateTools-3.2.3.GA works with Hibernate 4

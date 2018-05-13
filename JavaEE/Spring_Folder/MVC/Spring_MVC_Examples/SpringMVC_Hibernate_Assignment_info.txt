@@ -1,0 +1,78 @@
+create an Entity
+Product
+	pid
+	pname
+	category
+	price
+
+new_prod.do  - welcome page
+
+	it should forward the control to "AddProductController.java"  (Get)
+
+from "AddProductController.java" control should go to
+
+add.jsp
+
+	Enter prod name:
+	Enter price:
+	Select Category: <drop down>
+		Stationery
+		Grocery
+		Electronics
+[ validation for name
+	should not be empty
+	must contain characters
+
+  validation for price
+	should be more than 10 ]
+
+on click of submit, control should go to "AddProductController.java" (Post)
+
+Entity should be saved in database using DAO and control should go to "success.jsp", which will show two links
+	Add more
+	view products
+
+if user clicks on "Add more" link, control should go to
+"AddProductController.java" (Get) and from there "add.jsp"
+
+if user clicks on "view products" link,control should go to "ViewProductController.java" (Get) from there "view.jsp"
+
+view.jsp
+
+	Select Category to view:<drop down>
+		Stationery
+		Grocery
+		Electronics
+
+when user selects a particular category and click on submit, control should go to "ViewProductController.java" (Post) which will get the products based on the category selected (using DAO) and forward the control to "result.jsp" which will show product details and the following link:
+
+"Add More Products"
+
+u need to use
+
+DAO
+	ProductDAO
+		
+	void addProduct(Product ref);
+	List<Product> viewProduct(String category);
+	
+	
+	ProductDAOImpl
+
+		HibernateTemplate.....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	

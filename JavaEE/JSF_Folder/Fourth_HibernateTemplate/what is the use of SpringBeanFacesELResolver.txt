@@ -1,0 +1,1 @@
+Spring’s bean in Spring Ioc context, and JSF’s managed bean in JSF Ioc context, how to make both working together? The solution is defined Spring’s SpringBeanFacesELResolver in faces-config.xml

@@ -1,0 +1,34 @@
+how do u wire components inside IOC container?
+
+ans:
+in case of setter method:
+
+<bean id="a1" class="mypack.ParentBean">
+        <property name="abn" ref="a2"/>
+    </bean>
+
+		or
+
+in case of parameterized constructor:
+
+<bean id="a1" class="mypack.ParentBean">
+        <constructor-arg ref="a2"/>
+</bean>
+
+
+can we wire components without using "property" or "constructor-arg"?
+
+ans: yes , using "autowire"
+
+By default "autowire" is "no".
+
+
+
+
+
+
+
+
+
+
+

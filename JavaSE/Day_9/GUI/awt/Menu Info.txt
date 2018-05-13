@@ -1,0 +1,31 @@
+How to create menu ?
+
+There are 3 classes
+	MenuBar, Menu and MenuItem
+
+MenuBar is added to Frame 
+Menu us added to MenuBar
+MenuItem is added to Menu
+
+
+MenuBar mb;
+Menu mcolor;
+MenuItem mred,mblue,mpink;
+
+public MyFr3(String title)
+{
+	super(title);
+	mb=new MenuBar();
+	mcolor=new Menu("Color");
+	mred=new MenuItem("red");
+	mblue=new MenuItem("blue");
+	mpink=new MenuItem("pink");
+	setMenuBar(mb);
+	mb.add(mcolor);
+	mcolor.add(mred);
+	mcolor.add(mblue);
+	mcolor.add(mpink);
+
+
+
+		

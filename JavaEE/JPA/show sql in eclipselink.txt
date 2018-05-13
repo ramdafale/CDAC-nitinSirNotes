@@ -1,0 +1,6 @@
+Put the following properties in your persistence.xml:
+
+ <property name="eclipselink.logging.level.sql" value="FINE"/>
+ <property name="eclipselink.logging.parameters" value="true"/>
+
+The latter is helpful, so that the values of the parameter are shown.

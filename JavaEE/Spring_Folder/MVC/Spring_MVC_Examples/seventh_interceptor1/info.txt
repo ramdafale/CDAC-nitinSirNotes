@@ -1,0 +1,5 @@
+"ExecuteTimeInterceptor" interceptor will be applied to only "new_book.do" and not for "new_book1.do".
+
+
+
+change welcome-file entry from "new_book.do"  to "new_book1.do" and see the difference.

@@ -1,0 +1,8 @@
+In RESTful web services (JAX-RS) @QueryParam annotation will be used to get the query parameters from the URL. 
+
+
+Query Parameters Syntax
+Consider this URL:
+http://localhost:2013/RestPathAnnotationExample/rest/customers?nameKey=Java4s&countryKey=USA
+
+Here query parameters are nameKey, countryKey and their values are Java4s, USA respectively.

@@ -1,0 +1,155 @@
+create a folder "d:\trial".
+
+now create 2 folders "client" and "developer" inside "trial"
+
+inside "developer" create 3 folders "src","bin" and "lib".
+
+define following class and save inside "src" folder.
+
+
+
+package mypack;
+import java.io.*;
+/**
+This is the first class
+@author Nitin 
+@version 1.8
+**/
+public class MyClass1
+{
+	private int num;
+	/**
+	this method will accept a number and return its square.
+	@return the square of number passed
+	@param  k number to be passed
+	@throws IOException if number passed is less than or equal to zero
+	**/
+	public int sqr(int k)throws IOException
+	{
+		if(k<=0)
+		{
+			throw new IOException("negative or zero not allowed");
+		}
+		return k*k;
+	}
+
+	/**
+	this method will accept two numbers and return the result.
+	@param a first number to be passed
+	@param b first number to be passed
+	@return 1 if first number is greater, -1 if vice-versa, 0 if both are same.
+	**/
+	public int compare(int a,int b)
+	{
+		if(a>b)
+		{
+			return 1;
+		}
+		else if(a<b)
+		{
+			return -1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+	public class inner
+	{
+		public void dispin()
+		{
+		}
+	}
+}
+
+
+
+
+
+
+now go to command prompt:
+
+D:\trial\developer\src>javac -d ..\bin MyClass1.java
+
+you will find that inside "bin" folder, u get "mypack" folder in which
+
+MyClass1$inner.class and MyClass1.class.
+
+now in order to create API
+
+
+D:\trial\developer\src>javadoc -author -version -d ..\docs\api  MyClass1.java
+
+go inside "developer" folder and check whether "docs\api" is created in which we have api created for "MyClass1.java"
+
+right click on "docs" 
+	send to zip folder
+make sure "docs.zip" folder is created.
+
+
+
+now in order to create jar file go to
+
+D:\trial\developer\bin>jar cf myjar.jar mypack
+
+
+make sure "myjar.jar" is created inside "bin" folder. cut it and past it inside "lib" folder.
+
+
+
+copy "docs.zip" and "myjar.jar" in "client" folder. That is developer gives ".class" file and its documentation to the client.
+
+
+now go to client side 
+
+unzip "docs.zip"
+
+create following application which can use the class created by developer.
+
+
+
+
+import mypack.*;
+import java.io.*;
+public class App
+{
+	public static void main(String args[])
+	{
+		MyClass1 m1=new MyClass1();
+		try
+		{
+			System.out.println(m1.sqr(10));
+		}
+		catch(IOException ie)
+		{
+			ie.printStackTrace();
+		}
+		System.out.println(m1.compare(25,75));
+
+		MyClass1.inner i=m1.new inner();
+		i.dispin();
+		System.out.println("Done");
+	}
+}
+
+open new separate prompt and compile it.
+
+
+D:\trial\client>javac App.java
+
+
+you will get error
+
+package mypack does not exists!
+
+solution: u need to set the classpath of "myjar.jar"
+
+D:\trial\client>set classpath=%classpath%;myjar.jar;
+
+make sure now u can run App.java without any problem.
+
+
+
+
+
+

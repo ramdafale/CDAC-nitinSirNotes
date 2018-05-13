@@ -1,0 +1,21 @@
+<%@page session="true"%>
+
+
+// now there is no problem with "session" variable
+<%
+
+if(session==null)
+{
+	out.println("session does not exists");
+}
+else
+{
+	out.println("<br>"+session.getAttribute("book"));
+}
+out.println("<br>"+session.getAttribute("book"));
+session.setAttribute("book","advjava");
+
+%>
+<%=session.getAttribute("book")%>
+<br>
+<%=session.getAttribute("book")%>

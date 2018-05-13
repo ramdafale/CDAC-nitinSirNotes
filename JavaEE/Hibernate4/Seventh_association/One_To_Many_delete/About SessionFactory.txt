@@ -1,0 +1,1 @@
+here "SessionFactory" is created according to Hibernate4.

@@ -1,0 +1,2 @@
+mysql> create table employee(name varchar(20),desig varchar(30),salary decimal(6));
+Query OK, 0 rows affected (0.09 sec)

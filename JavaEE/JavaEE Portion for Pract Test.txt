@@ -1,0 +1,12 @@
+Servlet   [w/o database handling]
+JSP	  [w/o database handling]
+how to read init parameters in servlet
+how to set and get
+	request
+	session
+	application /ServletContext
+attributes in jsp and servlet.
+
+Spring MVC HibernateTemplate - Add and View
+generating entity using reverse engineering inside spring mvc application.
+Maven

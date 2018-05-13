@@ -1,0 +1,5 @@
+go to crome  
+
+run as
+
+http://localhost:8080/Rest_QueryParam/rest/customers?nameKey=abc&countryKey=India

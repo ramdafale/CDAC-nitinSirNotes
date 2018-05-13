@@ -1,0 +1,10 @@
+
+What happens when even is generated ?
+
+1) event is generated
+2) source identifies the type of event class 
+		(e.g MouseEvent, ActionEvent, KeyEvent etc)
+3) source instantiate event class
+4) instance of event class has got the information regarding an event i.e. event id, source which has generated the event ,x and y co-ordinates etc.
+5) now source calls event handler of the listener class , which has registered with it.
+6) while calling event handler, source pass "event class instance" as an argument.

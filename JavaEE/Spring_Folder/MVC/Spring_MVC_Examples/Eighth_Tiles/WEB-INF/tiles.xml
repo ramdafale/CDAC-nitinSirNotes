@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="base.definition"
+        template="Layout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/Header.jsp" />
+        <put-attribute name="menu" value="/Menu.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="footer" value="/Footer.jsp" />
+    </definition>
+ 
+    <definition name="category.definition" extends="base.definition">
+        <put-attribute name="body" value="/category.jsp" />
+    </definition>
+    <definition name="sector.definition" extends="base.definition">
+        <put-attribute name="body" value="/sector.jsp" />
+    </definition>
+    <definition name="tour.definition" extends="base.definition">
+        <put-attribute name="body" value="/tour.jsp" />
+    </definition>
+    <definition name="tour.special.definition" extends="base.definition">
+        <put-attribute name="body" value="/specialtour.jsp" />
+    </definition>
+     <definition name="itinerary.definition" extends="base.definition">
+        <put-attribute name="body" value="/itinerary.jsp" />
+    </definition>
+     <definition name="tourdate.definition" extends="base.definition">
+        <put-attribute name="body" value="/itinerary.jsp" />
+    </definition>
+    
+    <definition name="form.definition" extends="base.definition">
+        <put-attribute name="body" value="/form.jsp" />
+    </definition>
+    <definition name="SignUp.definition" extends="base.definition">
+        <put-attribute name="body" value="/SignUp.jsp" />
+    </definition>
+    
+    <definition name="login.definition" extends="base.definition">
+        <put-attribute name="body" value="/login.jsp" />
+    </definition>
+    
+ <definition name="booking.definition" extends="base.definition">
+        <put-attribute name="body" value="/booking.jsp" />
+    </definition>
+    
+    <!-- <definition name="form.definition" extends="base.definition">
+        <put-attribute name="body" value="/form.jsp" />
+    </definition>
+    
+    <definition name="SignUp.definition" extends="base.definition">
+        <put-attribute name="body" value="/SignUp.jsp" />
+    </definition> -->
+</tiles-definitions>
+
+
+
+
+
+
+

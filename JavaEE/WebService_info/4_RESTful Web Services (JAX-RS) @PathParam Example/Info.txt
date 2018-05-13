@@ -1,0 +1,1 @@
+In RESTful (JAX-RS) web services @PathParam annotation will be used to bind RESTful URL parameter values to the method arguments

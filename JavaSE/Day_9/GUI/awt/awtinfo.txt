@@ -1,0 +1,840 @@
+		GUI Programming in java
+The main elements of GUI programming are 
+
+a) Containers
+b) UI Components
+c) Layout Managers
+d) Event Handling
+
+Containers
+	they can contain other containers as well as components.
+
+	e.g. applet, frame, dialog, panel
+
+UI Components
+	e.g. button, textfield , textarea, label, scrollbar
+
+layout managers
+	they decide size and position of a particular component inside the container.
+
+even handling
+	java uses "delegation event model"	
+
+
+
+GUI programming in java can be done using "awt","swing" and "JavaFX".
+
+		AWT    (java.awt)
+
+Abstract Windowing Toolkit
+
+
+Containers in AWT
+
+	Applet:- can be added inside html. requires web browser to run.
+
+	Panel:- intermediate container. can be easily place inside some top level containers like applet, frame or dialog.
+
+	Frame:- window , which has got "minimise", "restore" and "close" button.
+
+	Dialog:- can be placed inside Frame. has got only "close" button.
+
+
+
+
+
+
+
+
+Applet
+
+	java program which can run inside java-enabled web browser. java-enabled means a web browser having jvm inside it. e.g. IE, nescape, mozilla etc.
+
+it requires html to be created. html will inform web browser about
+a) class to be loaded
+b) width and height of the applet to be displayed.
+
+
+Main steps in applet creation
+
+a) define a class which extends java.applet.Applet
+b) compile it.
+c) write html page
+d) run html page on browser.
+
+
+
+import java.awt.*;
+import java.applet.*;
+public class MyApp1 extends Applet
+{
+	public void paint(Graphics g)
+	{
+		g.drawString("welcome to first applet",20,60);
+	}
+}
+
+
+
+	MyApp1.html
+
+<Applet
+	code="MyApp1.class"
+	width="400"
+	height="400">
+</Applet>
+
+run this html on browser.
+
+
+
+
+
+appletviewer MyApp1.html
+
+
+
+
+
+
+
+
+import java.awt.*;
+import java.applet.*;
+public class MyApp3 extends Applet
+{
+	public void init()
+	{
+		setBackground(Color.red);
+	}
+	public void paint(Graphics g)
+	{
+		g.drawString("welcome to third applet",20,60);
+	}
+}
+
+/*
+<Applet
+	code="MyApp3.class"
+	width="400"
+	height="400">
+</Applet>
+*/
+
+javac MyApp2.java
+
+appletviewer MyApp2.java
+
+
+
+
+			Life Cycle of Applet
+
+
+since applet is running within the context of web browser, it has got the life cycle. 
+Applet life cycle is managed by web browser in which it is running.
+
+Following are the methods which represent Applet life cycle. They all are defined within Applet class.
+
+
+public void init()
+
+	this method is called initially and it is called only once.
+
+	this method can be used for
+		setting background of applet
+		adding components
+		creating thread if any
+		setting layout if any
+		registering listeners with the source.
+
+public void start()
+
+	this method is called , immediately after "init()" and whenever applet is revisited.
+
+public void paint(Graphics)
+	once applet's start() is called , applet is said to be in a runnable mode. In runnable mode, browser calls "paint() " method.
+
+public void stop()
+	
+	this method is called when user leaves applet page and visit some other page on the browser.
+
+public void destroy()
+	this method is called when browser instance is closed.
+
+
+
+
+		how to include more than one applet in one html page ?
+
+
+import java.awt.*;
+import java.applet.*;
+public class First extends Applet
+{
+	public void init()
+	{
+		setBackground(Color.blue);
+	}
+	public void paint(Graphics g)
+	{
+		g.drawString("First applet",20,60);
+	}
+}
+
+import java.awt.*;
+import java.applet.*;
+public class Second extends Applet
+{
+	public void init()
+	{
+		setBackground(Color.pink);
+	}
+	public void paint(Graphics g)
+	{
+		g.drawString("Second applet",20,60);
+	}
+}
+
+		combine.html
+
+<Applet
+	code="First.class"
+	width="300"
+	height="300">
+</Applet>
+<Applet
+	code="Second.class"
+	width="300"
+	height="300">
+</Applet>
+
+
+appletviewer combine.html
+
+
+how to pass parameters to applet ?
+
+import java.awt.*;
+import java.applet.*;
+public class ParamApp extends Applet
+{
+	String str=null;
+	public void init()
+	{
+		setBackground(Color.red);
+		str=getParameter("uname");
+	}
+	public void paint(Graphics g)
+	{
+		if(str!=null)
+		g.drawString("User Name is  "+str,20,60);
+	}
+}
+
+/*
+<Applet
+	code="ParamApp.class"
+	width="300"
+	height="300">
+	<param
+		name="uname"
+		value="admin">
+	</param>	
+</Applet>
+*/
+
+
+
+
+
+
+
+how to add UI Components inside the container ?
+
+a) create an instance/s of required UI Component class
+b) use "add(Component)" method .
+
+
+e.g.
+
+import java.awt.*;
+import java.applet.*;
+public class CompApp extends Applet
+{
+	Checkbox cb1,cb2;
+	public void init()
+	{
+		setBackground(Color.red);
+		cb1=new Checkbox("C++");
+		cb2=new Checkbox("Java");
+		add(cb1);
+		add(cb2);
+	}
+}
+
+// radio buttons
+
+CheckBoxGroup cbg=new CheckBoxGroup();
+Checkbox cb1,cb2;
+
+	init()
+		cbg=new CheckBoxGroup();
+		cb1=new Checkbox("male",cbg,true);
+		cb2=new Checkbox("female",cbg,false);
+		add(cb1);
+		add(cb2);
+
+
+
+// label , textfield and textarea
+
+Label lb;
+TextField tf;
+TextArea ta;
+
+	init()
+		lb=new Label("Enter ur name");
+		tf=new TextField(30);
+		ta=new TextArea(5,30);
+		add(lb);
+		add(tf);
+		add(ta);		
+
+
+// dropdown list
+
+Choice ch;
+
+	init()
+		ch=new Choice();
+		ch.addItem("C++");
+		ch.addItem("Oracle");
+		ch.addItem("java");
+		ch.addItem("DotNet");
+		
+		add(ch);
+				
+
+// scrollbar
+
+Scrollbar sb1,sb2;
+
+	init()
+		sb1=new Scrollbar(Scrollbar.HORIZONTAL);
+		sb2=new Scrollbar(Scrollbar.VERTICAL);
+
+		add(sb1);
+		add(sb2);
+
+
+
+
+
+
+			
+	Layout Manager
+
+Layout Manager decides size and position of a component in the container.
+
+There are 5 layout managers in awt.
+
+FlowLayout
+BorderLayout
+GridLayout
+GridBagLayout
+CardLayout
+
+in order to set any layout u need to perform 2 steps
+
+a) instantiate the required Layout Manager class
+b) use "setLayout()" method.
+
+
+FlowLayout
+	default layout for Applet and Panel.
+	adds the component from left to right.
+	displays components in prefered size.
+	by default gap bet'n 2 components is 5 pixels.
+
+
+e.g.
+
+import java.awt.*;
+import java.applet.*;
+public class CompApp extends Applet
+{
+	Button b1,b2;
+	public void init()
+	{
+		setBackground(Color.red);
+		setLayout(new FlowLayout(FlowLayout.LEFT,15,15);
+		b1=new Button("ok");
+		b2=new Button("cancel");
+		add(b1);
+		add(b2);
+	}
+}
+
+
+
+
+
+
+
+
+BorderLayout
+
+	default for Frame and Dialog
+
+	it devides the container into 5 areas
+	north,south,east,west and center
+
+	in order to add component according to BorderLayout following method is used
+
+	add("area",Component)
+	or
+	add(Component,BorderLayout.area)
+
+	once a component is added in a particular area, it occupies entire area.
+
+
+
+
+import java.applet.*;
+import java.awt.*;
+public class BorderApp extends Applet
+{
+	Scrollbar s1,s2,s3,s4;
+	TextArea ta;
+	public void init()
+	{
+		setLayout(new BorderLayout());
+		s1=new Scrollbar(Scrollbar.HORIZONTAL);
+		s2=new Scrollbar(Scrollbar.HORIZONTAL);
+		s3=new Scrollbar(Scrollbar.VERTICAL);
+		s4=new Scrollbar(Scrollbar.VERTICAL);
+		ta=new TextArea(5,30);
+		add("North",s1);
+		add(s2,BorderLayout.SOUTH);
+		add("West",s3);
+		add(s4,BorderLayout.EAST);
+		add(ta); // by default center, so no need to specify
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+GridLayout
+
+	not a default layout for any container.
+	devides the container into specified cells (rows and columns).
+
+	all the columns are having equal width.
+	all the rows are having equal height.
+
+	components are added from left to right.
+	when component is added in a particular cell, it occupies entire cell.
+e.g.
+
+import java.awt.*;
+import java.applet.*;
+public class GridApp extends Applet
+{
+	Button b[]=new Button[9];
+	public void init()
+	{
+		setLayout(new GridLayout(3,3));
+		for(int i=0;i<b.length;i++)
+		{
+			b[i]=new Button(""+(i+1));
+			add(b[i]);
+		}
+	}
+}
+
+
+// Border layout assignment
+
+
+Frame
+
+	Standalone GUI Application in java
+
+in order to create Frame 
+	a) create a sub class of Frame
+	or
+	b) create an instance of Frame explicitly.
+
+
+	u need to set the size of Frame programatically using "setSize(w,h)" method.
+	Frame is by default invisible, hence u need to call "setVisible(true)".
+
+
+e.g.
+
+import java.awt.*;
+public class MyFr1 extends Frame
+{
+	public MyFr1(String title)
+	{
+		super(title);
+		setSize(400,400);
+		setVisible(true);
+	}
+	public static void main(String args[])
+	{
+		new MyFr1("My Window");
+	}
+}		
+
+or
+
+import java.awt.*;
+public class MyFr2
+{
+	Frame fr;
+	public MyFr2(String title)
+	{
+		fr=new Frame(title);
+		fr.setSize(400,400);
+		fr.setVisible(true);
+	}
+	public static void main(String args[])
+	{
+		new MyFr2("My Window");
+	}
+}		
+
+
+pack() method displays the frame in prefered size.
+
+
+
+
+
+
+
+
+DualCode
+
+	it means an application which can be used as Applet or Frame.
+
+
+
+DualCode.java
+
+
+	java DualCode
+
+
+	appletviewer DualCode.java
+
+
+public class DualCode extends Applet
+{
+	Button b1,b2;
+	public void init()
+	{
+		setBackground(Color.red);
+		b1=new Button("ok");
+		b2=new Button("cancel");
+		add(b1);
+		add(b2);
+	}
+	public static void main(String args[])
+	{
+		DualCode d=new DualCode();
+		Frame fr=new Frame("My Window");
+		d.init();
+		fr.add(d); // adding entire applet inside Frame
+		fr.pack();
+		fr.setVisible(true);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

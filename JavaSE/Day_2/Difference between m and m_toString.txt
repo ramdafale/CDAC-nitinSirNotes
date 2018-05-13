@@ -1,0 +1,59 @@
+MyClass m=new MyClass();
+
+System.out.println(m);
+
+
+
+"println" method of System class
+
+
+println(Object ref)
+{
+	write(String.valueOf(ref));
+}
+
+
+"valueOf" method of String
+
+public static String valueOf(Object obj)
+{
+        return (obj == null) ? "null" : obj.toString();
+}
+
+
+"write" method in System class
+
+ private void write(String s) 
+ {
+	// code to actually print the data
+ }
+
+
+
+
+			vs
+
+MyClass m=new MyClass();
+System.out.println(m.toString());
+
+
+
+
+method "print" in System class
+
+
+ public void print(String s) {
+        if (s == null) {
+            s = "null";
+        }
+        write(s);
+    }
+
+
+
+"write" method in System class
+
+ private void write(String s) 
+ {
+	// code to actually print the data
+ }

@@ -1,0 +1,1 @@
+copy "views.properties" inside "src" 

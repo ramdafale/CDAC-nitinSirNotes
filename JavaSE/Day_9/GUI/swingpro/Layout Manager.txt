@@ -1,0 +1,15 @@
+	Layout Manager
+Layout Manager decides size and position of a component in a particular container
+There are 5 layout managers in awt
+a)FlowLayout
+default for Applet and Panel
+b)BorderLayout
+default for Frame and Dialog
+devides the container into 5 regions
+i.e. north,south,east,west and center
+c)GridLayout
+devides the container into no.of rows and cols
+d)CardLayout
+Arranges all component one by one like cards
+e)GridBagLayout
+Takes the help of another class GridBagConstraint

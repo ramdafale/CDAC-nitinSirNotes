@@ -1,0 +1,19 @@
+in base constructor
+in Part constructor
+in saveme const
+I am special function
+100
+200
+300
+in writeobject of base
+in writeobject of saveme
+in writeobject of part
+100
+While deserializing
+in readobject of base
+in readobject of saveme
+in readobject of part
+I am special function
+100
+200
+300

@@ -1,0 +1,18 @@
+create a package "mypack". In this package create a class "Product" with following fields:
+
+	String proname
+	int price
+	int qty
+
+also have
+	default constructor
+	setter and getter methods
+	"toString" which will display proname,price and qty
+
+create a welcome page as "Add.jsp" which will accept
+proname,price,qty through a form. on submit control should go to "AddServ" servlet which will 
+
+	instantiate "Product" class
+	retrieve the request parameters and invoke setters of "Product".
+	print the instance of "Product" class.
+	

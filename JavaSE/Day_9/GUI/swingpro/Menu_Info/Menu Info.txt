@@ -1,0 +1,10 @@
+How to create menu ?
+
+There are 3 classes
+	JMenuBar, JMenu and JMenuItem
+
+JMenuBar is added to JFrame 
+JMenu us added to JMenuBar
+JMenuItem is added to JMenu
+
+

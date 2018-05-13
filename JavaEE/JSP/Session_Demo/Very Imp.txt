@@ -1,0 +1,15 @@
+<%@page session="true"%>
+
+	it means "session" variable is there and works like
+	
+		HttpSession session=request.getSession()
+		or
+		HttpSession session=request.getSession(true)
+
+
+
+<%@page session="false"%>
+
+	it means "session" variable is not available and so u need to create and the reason for creating session variable is:
+
+HttpSession session=request.getSession(false)

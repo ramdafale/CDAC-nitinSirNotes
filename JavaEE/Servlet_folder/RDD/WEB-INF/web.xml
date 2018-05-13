@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app>
+
+  <display-name>Welcome to Tomcat</display-name>
+  <description>
+     Welcome to Tomcat
+  </description>
+<servlet>
+		<servlet-name>MyServ</servlet-name>
+		<servlet-class>MyServ</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MyServ</servlet-name>
+		<url-pattern>/MyServ</url-pattern>
+	</servlet-mapping>
+</web-app>

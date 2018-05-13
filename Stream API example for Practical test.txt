@@ -1,0 +1,167 @@
+Question:
+
+	define a class "Pizza" with:
+
+	enum Size
+	{
+		SMALL,LARGE,MEDIUM;
+	}
+	private String name;
+	private int quantity;
+	private double price;
+	private Size size;
+
+	
+	define setter and getter methods
+
+	create 5 objects of this class and stored them inside list.
+
+	using stream api:
+
+	count how many pizzas are having "LARGE" size
+
+	calculate sum of all the prices
+
+	calculate sum of all the quantities.
+
+	
+		
+
+
+package mypack;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import mypack.Pizza.Size;
+
+
+class Order
+{
+	enum Size
+	{
+		SMALL,LARGE,MEDIUM;
+	}
+	private String name;
+	private int quantity;
+	private double price;
+	private Size size;
+	/**
+	 * @return the quantity
+	 */
+	public int getQuantity() {
+		return quantity;
+	}
+	/**
+	 * @param quantity the quantity to set
+	 */
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	/**
+	 * @return the price
+	 */
+	public double getPrice() {
+		return price;
+	}
+	/**
+	 * @param price the price to set
+	 */
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	/**
+	 * @return the Size
+	 */
+	public Size getSize() {
+		return size;
+	}
+	/**
+	 * @param Size the Size to set
+	 */
+	public void setType(Size size) {
+		this.size = size;
+	}
+	public void setName(String name)
+	{
+		this.name=name;
+	}
+	public String getName()
+	{
+		return name;
+	}
+}
+public class Demo
+{
+	public static void main(String args[])
+	{
+		Pizza p1=new Pizza();
+		p1.setName("cheese pizza");
+		p1.setQuantity(70);
+		p1.setPrice(100);
+		p1.setSize(Size.LARGE);
+		
+		Pizza p1=new Pizza();
+		p1.setName("chicken pizza");
+		p1.setQuantity(70);
+		p1.setPrice(100);
+		p1.setSize(Size.LARGE);
+		
+		Pizza p1=new Pizza();
+		p1.setName("Veggie pizza");
+		p1.setQuantity(70);
+		p1.setPrice(100);
+		p1.setSize(Size.LARGE);
+
+		Pizza p1=new Pizza();
+		p1.setName("garlic pizza");
+		p1.setQuantity(70);
+		p1.setPrice(100);
+		p1.setSize(Size.LARGE);
+
+		Pizza p1=new Pizza();
+		p1.setName("hawai pizza");
+		p1.setQuantity(70);
+		p1.setPrice(100);
+		p1.setSize(Size.LARGE);
+		
+		List<Order>mylist=new ArrayList<Order>();
+		mylist.add(o1);
+		mylist.add(o2);
+		mylist.add(o3);
+		System.out.println(mylist.stream().filter(x->x.getType().equals(Type.SELL)).count());
+		System.out.println(mylist.stream().mapToDouble(o ->o.getPrice()).sum());
+		System.out.println(mylist.stream().mapToInt(o ->o.getQuantity()).sum());
+
+
+	find out pizza name starts with 's'
+
+	average of quantity
+
+	pizzas costing more than 250
+
+	how many pizzas having price in between age 150 and 300
+
+
+
+
+mylist.stream().filter(s->s.getName().startsWith("s")).forEach(System.out::println);
+		System.out.println(mylist.stream().mapToInt(t->t.getQuantity()).average().getAsDouble());
+		System.out.println(mylist.stream().filter(s->s.getPrice()>250).count());
+		System.out.println(mylist.stream().filter(p->p.getPrice()>=150 && p.getPrice()()<=300).count());
+
+
+display all the pizzas in sorted order of pname
+
+	find out quantity where name is 'cheese_pizza'
+
+
+mylist.stream().sorted((s1,s2)->s1.getName().compareTo(s2.getName())).forEach(System.out::println);
+		mylist.stream().filter(s->s.getName().equalsIgnoreCase("cheese_pizza")).mapToInt(i->i.getQuantity()).forEach(System.out::println);
+	}
+}
+
+
+
+
+

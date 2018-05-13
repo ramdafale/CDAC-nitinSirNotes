@@ -1,0 +1,91 @@
+in order to add new record,
+
+select "post"
+
+make sure url is "http://localhost:8080/Spring_Rest_CRUD/countries"
+
+body
+
+raw
+
+make sure "JSON(application/json)
+
+
+type following
+
+{
+"id": 5,
+"countryName": "NewZealand",
+"population": 12000
+}
+
+click on "Send"
+
+in order to confirm whether record is added or not.
+
+select "get"
+
+make sure url is
+
+http://localhost:8080/Spring_Rest_CRUD/countries
+
+
+
+
+
+in order to modify existing record,
+
+select "put"
+
+make sure url is "http://localhost:8080/Spring_Rest_CRUD/countries"
+
+body
+
+raw
+
+make sure "JSON(application/json)
+
+
+type following
+
+{
+"id": 2,
+"countryName": "xyz",
+"population": 2000
+}
+
+click on "Send"
+
+in order to confirm whether record is added or not.
+
+select "get"
+
+make sure url is
+
+http://localhost:8080/Spring_Rest_CRUD/countries
+
+
+
+in order to "delete" record,
+
+select "delete"
+
+make sure url is 
+
+http://localhost:8080/Spring_Rest_CRUD/country/4
+
+click on "send"
+
+here we want to delete a record having id as 4
+
+in order to confirm whether record is deleted or not.
+
+select "get"
+
+make sure url is
+
+http://localhost:8080/Spring_Rest_CRUD/countries
+
+
+
+

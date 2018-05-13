@@ -1,0 +1,3 @@
+Postman is a powerful HTTP client for testing web services. Created by Abhinav Asthana, a programmer and designer based in Bangalore, India, Postman makes it easy to test, develop and document APIs by allowing users to quickly put together both simple and complex HTTP requests.
+
+Postman is used to test rest web-service. it is available with the latest version of "Crome". with the help of "Crome_Setup" you can install "Postman".

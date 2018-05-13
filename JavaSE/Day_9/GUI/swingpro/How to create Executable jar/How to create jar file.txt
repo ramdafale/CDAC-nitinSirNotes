@@ -1,0 +1,2 @@
+
+jar cfm special.jar MyFr.tmp MyFr*.class

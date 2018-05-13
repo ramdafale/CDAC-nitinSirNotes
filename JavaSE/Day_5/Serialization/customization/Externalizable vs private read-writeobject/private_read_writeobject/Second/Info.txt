@@ -1,0 +1,3 @@
+saveme "writeObject" and "readObject" invoke "base" "writeObject" and "readObject" respectively. i.e. implicit invocation.
+
+However, since we are serializing only num of saveme, and not "Part", obviously "Part" class "writeObject" and "readObject" are not invoked.

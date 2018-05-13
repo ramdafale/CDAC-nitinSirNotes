@@ -1,0 +1,238 @@
+select
+*
+from orders
+where 	amt
+>any(select amt from orders where date_format(odate,'%d/%m')='06/10')
+
+select * from orders where date_format(odate,'%d/%m')='06/10'
+
+
+select sum(amt) from orders
+where odate not in
+(select odate from orders group by odate having sum(amt)<=2000+ max(amt))
+group by odate;
+
+
+
+select ename,sum(salary) from
+emp
+having sum(salary)>100; 
+
+
+
+select * from salespeople s
+where  exists 
+(select 1 from customers c
+where s.snum=c.snum
+and rating=300)
+
+
+
+
+select s.snum,s.sname,c.cname,c.city from salespeople s,
+customers c
+where
+c.snum!=s.snum
+and
+s.city=c.city;
+ 
+
+
+
+select s.snum,s.sname from salespeople s
+where exists
+(select 1 from
+customers c
+where
+c.snum!=s.snum
+and
+s.city=c.city);
+
+
+Q 36
+
+
+select
+c1.cname,c2.cname
+from
+customers c1 , customers c2
+where c1.cname<c2.cname;
+
+
+
+Q 61
+
+
+select
+s.sname,c.cname
+from
+salespeople s ,customers c
+where s.sname<c.cname
+and rating <200;
+
+ 
+
+
+Q 35
+
+select * from
+customers
+where cname between 'a' and 'gzzzzzz';
+
+
+select * from
+customers
+where cname >='a' and cname <'h';
+
+
+Q 100
+
+select case when o.cnum=r.cnum then 'yes, customers ....' else
+'no, they don''t ' end Answer100 from
+(select cnum,count(onum) from orders
+group by cnum order by count(onum) desc  limit 1) o
+,
+(select cnum,cname from customers order by rating desc limit 1)
+r
+;
+
+
+select o1.cnum from
+(select co.cnum from (select count(onum) ocnt from
+orders group by cnum order by count(onum) desc limit 1) m,(select cnum,count(onum) ocnt from 
+orders group by cnum ) co
+where
+co.ocnt=m.ocnt) o1,
+
+(select c.cnum from
+(select cnum,rating from customers) c,(select max(rating)  rating from customers) cr
+where
+c.rating=cr.rating) r1
+where o1.cnum=r1.cnum ;
+
+
+
+
+select cnum from
+customers out1
+where exists
+(select 1
+from (select count(onum) ocnt from
+orders group by cnum order by count(onum) desc limit 1) m,(select cnum,count(onum) ocnt from 
+orders group by cnum ) co
+where
+co.ocnt=m.ocnt 
+and
+co.cnum=out1.cnum)
+and
+exists
+(select c.cnum from
+(select cnum,rating from customers) c,(select max(rating)  rating from customers) cr
+where
+c.rating=cr.rating
+and
+c.cnum=out1.cnum); 
+
+
+select total_amt , total_comm*5 5_total_comm, case when total_amt>5*total_comm then 'true' else 'false' end result from
+(select  sum(amt) total_amt from orders o join customers c on o.cnum=o.cnum where c.city='London' || c.city = 'Rome') ca
+,
+(select sum(amt*comm) total_comm from orders o join salespeople s on s.snum=o.snum where s.city='London' || s.city='New York') sc
+
+select concat(substring(10.557,1,locate('.',10.557)),substring(10.557,locate('.',10.557)+1,2))
+
+drop function sf_getmultiple$$
+create function sf_getmultiple
+(num float, multi int,places tinyint)
+returns varchar(100)
+begin
+declare result varchar(100);
+declare tmpnum varchar(100);
+declare decnum float;
+set tmpnum=concat(substring(num,1,locate('.',num)),substring(num,locate('.',num)+1,places));
+set decnum=round((right(tmpnum,places))/multi)*multi;
+set result=concat(substring(num,1,locate('.',num)),decnum);
+set result=concat(substring(result,1,locate('.',result)) , substring(result,locate('.',result)+1,places));
+return result;
+end
+$$
+
+
+
+create table custprod
+(cid int , pid int);
+
+
+
+insert into custprod values
+(1,1),
+(1,4),
+(1,5),
+(1,7),
+(2,1),
+(2,3),
+(2,6),
+(2,7),
+(3,2),
+(3,4),
+(3,5),
+(3,6),
+(3,7);
+
+
+
+
+select c1,c2,num,den-num den, num/(den-num) as sim from
+(
+select 
+c1.cid c1, c2.cid c2,
+count(case when c1.pid=c2.pid then c1.pid else null end) num,
+count(distinct c1.pid)+ count(distinct c2.pid) den
+from
+custprod c1, custprod c2
+where c1.cid<c2.cid
+group by c1.cid,c2.cid) as t ;
+
+
+create table emp_audit
+(sysdate datetime,
+ user_upd varchar(100),
+old_eid int,
+new_eid int,
+old_ename varchar(100),
+new_ename varchar(100),
+old_salary int,
+new_salary int);
+
+drop trigger trig_upd_emp$$
+CREATE TRIGGER trig_upd_emp
+    BEFORE UPDATE   ON emp
+    FOR EACH ROW 
+BEGIN
+    INSERT INTO emp_audit(sysdate,user_upd,old_eid,new_eid,
+ old_ename,new_ename,old_salary,new_salary)
+ values(now(),current_user(),old.eid,new.eid,old.ename,new.ename,
+old.salary,new.salary);
+END$$
+
+CREATE TRIGGER trig_ins_emp
+    BEFORE INSERT ON emp
+    FOR EACH ROW 
+BEGIN
+    INSERT INTO emp_audit(sysdate,user_upd,old_eid,new_eid,
+ old_ename,new_ename,old_salary,new_salary)
+ values(now(),current_user(),old.eid,new.eid,old.ename,new.ename,
+old.salary,new.salary);
+END$$
+
+
+
+CREATE TRIGGER trig_del_emp
+    BEFORE delete ON emp
+    FOR EACH ROW 
+BEGIN
+    INSERT INTO emp_audit(sysdate,user_upd,old_eid,
+ old_ename,old_salary)
+ values(now(),current_user(),old.eid,old.ename,
+old.salary);
+END$$

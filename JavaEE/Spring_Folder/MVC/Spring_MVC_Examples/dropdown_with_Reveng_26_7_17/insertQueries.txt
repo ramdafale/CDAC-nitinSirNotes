@@ -1,0 +1,26 @@
+ insert into statemaster values(101,"Maharashtra");
+OK, 1 row affected (0.16 sec)
+
+ insert into statemaster values(102,"Kerala");
+OK, 1 row affected (0.08 sec)
+
+ insert into statemaster values(103,"Goa");
+OK, 1 row affected (0.01 sec)
+
+
+
+ insert into citymaster values(201,"Kohlapur",101);
+OK, 1 row affected (0.09 sec)
+
+ insert into citymaster values(202,"Jalgaon",101);
+OK, 1 row affected (0.05 sec)
+
+ insert into citymaster values(203,"Nashik",101);
+OK, 1 row affected (0.03 sec)
+
+
+ insert into citymaster values(204,"vadodra",102);
+OK, 1 row affected (0.05 sec)
+
+ insert into citymaster values(205,"Ratlam",102);
+OK, 1 row affected (0.03 sec)

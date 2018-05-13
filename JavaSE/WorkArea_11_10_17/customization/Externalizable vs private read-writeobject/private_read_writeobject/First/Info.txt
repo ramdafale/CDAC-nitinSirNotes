@@ -1,0 +1,1 @@
+writeObject of "saveme" implicitly invokes "writeObject" of "base" and "part"

@@ -1,0 +1,32 @@
+go to
+
+D:\Nashhorn_demos\first
+
+	create a folder "mypack"
+
+save "Test.java" inside it
+
+and compile
+
+
+now write "Sample.js" inside "D:\Nashhorn_demos\first" folder.
+
+go to command prompt and type
+
+
+
+D:\Nashhorn_demos\first>jjs -cp ./ Sample.js
+
+note:-
+	jjs<space>-cp<space>./<space>Sample.js
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+According to jdbc 4.0 , no need explicitly load the "jdbc driver" using 
+Class.forName("drivername")
+	or
+DriverManager.registerDriver(new driverclassname)
+when u say 
+
+
+DriverManager.getConnection("drivername");
+
+driver gets loaded.
+

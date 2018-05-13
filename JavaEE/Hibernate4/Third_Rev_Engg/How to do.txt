@@ -1,0 +1,71 @@
+file
+	new 
+		java project
+		
+
+			right click on "src"
+
+		hibernate configuration
+		hibernate console configuration
+
+	convert your project to "maven"
+
+and all following dependencies to "pom.xml"
+
+<dependencies>
+  <dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-core</artifactId>
+    <version>4.1.4.Final</version>
+    <scope>provided</scope>
+</dependency>
+<dependency>
+    <groupId>mysql</groupId> 
+    <artifactId>mysql-connector-java</artifactId>
+    <version>5.1.17</version>
+ </dependency> 
+  </dependencies>
+
+
+right click on "src"
+
+
+		hibernate reverse eng
+
+	hibernate code generation configuration
+
+output directory  -  \reveng\src
+
+select "reverse eng from JDBC"
+
+package - mypack
+reveng.xml -  \reveng\src\hibernate.reveng.xml
+
+	"Exporters" tab
+
+using Ejb3 Annotations
+
+	select "Domain code(.java)"	
+
+	
+
+	"Refresh" tab
+	select "Refresh resource upon completion"
+	select "The project containing" selected source"
+
+	click on "apply" and "run"
+
+	make sure "Dept.java" is created in "mypack".
+
+	copy "HibernateUtil.java" and "Main.java" in "mypack"
+
+	in src you must be having "hibernate.cfg.xml" and "hibernate.reveng.xml"
+
+	go to "hibernate.cfg.xml" and add following line
+
+	<mapping class="mypack.Dept"/>
+
+	right click on "project" say refresh
+
+	run "Main.java"
+

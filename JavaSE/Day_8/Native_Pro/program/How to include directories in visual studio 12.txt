@@ -1,0 +1,17 @@
+right click on project
+
+c/c++
+general
+additional include directories
+click on "edit"
+
+C:\Program Files (x86)\Java\jdk1.8.0_20\include
+
+C:\Program Files %28x86%29\Java\jdk1.8.0_20\include\win32
+
+apply
+
+ok
+
+make sure compilation errors are gone.
+

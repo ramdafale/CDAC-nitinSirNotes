@@ -1,0 +1,8 @@
+1) create a form which will accept Employee details i.e. name,desig and salary. on click on submit,persist Employee object using jdbc. 
+
+2) create a table product
+id,name,category,price
+
+enter some records
+
+create Prod.jsp where a dropdown list consists of categories [from database] should be displayed. when user selects a particular category and hit the submit button, show.jsp should display all the products with their cost for that category.

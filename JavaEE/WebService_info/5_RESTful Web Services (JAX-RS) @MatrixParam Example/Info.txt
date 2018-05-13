@@ -1,0 +1,9 @@
+Matrix Parameters Syntax
+
+
+Consider this URL
+
+http://localhost:8080/projectname/rest/customers;nameKey=Abc;countryKey=USA
+
+If you observe the URL, we are passing 2 parameters nameKey=Abc & countryKey=USA.  
+One parameter is separated from another with a semicolon, similarly you can pass any number of parameters. These type of parameters are called as Matrix Parameters. 

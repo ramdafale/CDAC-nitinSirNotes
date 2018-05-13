@@ -1,0 +1,54 @@
+using database	
+
+	
+
+	managed bean
+
+		ProductBean
+
+			private String name; // setters and getters
+
+			private List<String> mylist; // getter method
+
+public String addProduct(){}
+
+public String viewProducts(){}
+
+				
+
+Add.xhtml
+
+Enter Product name: 
+
+	add to cart- 
+
+when u click on "add to cart", control should go to "addProduct()" method which will add the product inside database and on successful addition it will pass the control to "success.xhtml" " where u will be having a message "Product successfully added..." and two links:
+
+
+		add more
+
+		view cart
+
+if u click on "add more", control should go to "Add.xhtml"
+
+if u click on "view cart", control should go to "viewProducts()" method of "ProductBean" which will retrieve products from database,store them in arraylist and pass the control to "View.xhtml" which will display all the products.
+
+also "View.xhtml" should have a link "Add more" which will take the control to "Add.xhtml".
+
+if "addProduct()" method is not able to add the product inside database it should pass the control to "fail.xhtml" which will have a message "Sorry record can not be added..."
+
+and a link
+
+<a href="Add.jsf">Retry</a>
+
+
+
+
+
+
+
+
+
+
+
+

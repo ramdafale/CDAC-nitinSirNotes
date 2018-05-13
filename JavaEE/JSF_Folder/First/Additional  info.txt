@@ -1,0 +1,20 @@
+In our "faces-config.xml" file there is a code :
+
+
+
+<navigation-rule>
+	<from-view-id>*</from-view-id>
+            <navigation-case>
+                  <from-outcome>index</from-outcome>
+          	   		<to-view-id>/index.jsp</to-view-id>
+            </navigation-case>
+ </navigation-rule>
+
+
+it is because, in "Hello.jsp" and "Bye.jsp" we have
+
+<h:commandLink id="Cancel"action="index"immediate="true">
+                  <h:outputText value="Cancel"/>
+ </h:commandLink>
+
+that is whenever we click on "cancel link" , we should be able to go to "index.jsp" page.

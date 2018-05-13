@@ -1,0 +1,1 @@
+how to invoke spring controller method from ajax and get the data.

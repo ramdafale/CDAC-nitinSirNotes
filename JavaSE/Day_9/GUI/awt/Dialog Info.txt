@@ -1,0 +1,13 @@
+
+		Dialog
+
+Dialog class is derived from Window. Following methods can be used with Dialog also.
+	setSize()
+	setVisible()
+	dispose()
+
+
+Dialog class has following constructor
+
+	Dialog(Frame parent,String title,boolean modal)
+	

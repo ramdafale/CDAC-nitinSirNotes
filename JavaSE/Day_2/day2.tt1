@@ -1,0 +1,58 @@
+/**
+ * 
+ */
+package mypack;
+
+interface game
+{
+	void play();
+	
+}
+
+class football implements game
+{
+	
+	public void play()
+	{
+		System.out.println("Football class");
+	}
+
+}
+
+class tennis implements game
+{
+	public void play()
+	{
+		System.out.println("tennis class");
+	}
+
+}
+
+class cricket implements game
+{
+	public void play()
+	{
+		System.out.println("cricket class");
+	}
+
+}
+public class Demo {
+
+	static void perform(game ref)
+	{
+		if(ref instanceof football)
+		{
+		ref.play();
+		}	
+		
+	}
+	
+	public static void main(String[] args) {
+	
+		perform(new football());
+		perform(new tennis());
+		perform(new cricket());
+		
+	}
+
+}

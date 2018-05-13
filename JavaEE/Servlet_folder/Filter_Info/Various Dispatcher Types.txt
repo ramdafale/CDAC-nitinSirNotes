@@ -1,0 +1,9 @@
+Following are various dispatcher types:
+
+REQUEST: Only when the request comes directly from the client
+
+FORWARD: Only when the request has been forwarded to a component 
+
+INCLUDE: Only when the request is being processed by a component that has been included 
+
+ERROR: Only when the request is being processed with the error page mechanism 

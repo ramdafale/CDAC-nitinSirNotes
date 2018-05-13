@@ -1,0 +1,22 @@
+in base constructor
+in Part constructor
+in saveme const
+I am special function
+100
+200
+300
+inside base writeExternal method
+inside saveme writeExternal method
+inside part writeExternal method
+100
+While deserializing
+in base constructor
+in Part constructor
+in saveme const
+I am special function
+inside base readExternal method
+inside saveme readExternal method
+inside part readExternal method
+100
+200
+300

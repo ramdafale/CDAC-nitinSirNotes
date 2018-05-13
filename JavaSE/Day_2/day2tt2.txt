@@ -1,0 +1,55 @@
+/**
+ * 
+ */
+package mypack;
+
+class base1
+{
+	int num;
+
+	
+	base1(int n)
+	{
+		this.num = n;
+		System.out.println("In base1 parameterised constructor");
+	}
+
+	void disp()
+	{
+		System.out.println(num);
+	}
+
+}
+class sub1 extends base1
+{
+	
+	sub1()
+	{
+		super(5);
+		System.out.println("In sub1 default constructor");
+		
+		
+	}
+	sub1(int a)
+	{
+		super(10);
+		System.out.println("In sub1 Parameterised constr  1");
+	}
+	
+	sub1(int a, int b)
+	{
+		super(20);
+		System.out.println("In sub1 Parameterised constr  2");
+	}
+	
+}
+public class inheritanceDemo {
+
+	
+	public static void main(String[] args) {
+		
+		sub1 s1 = new sub1(10);
+		s1.disp();
+	}
+
+}

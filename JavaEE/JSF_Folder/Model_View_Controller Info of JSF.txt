@@ -1,0 +1,5 @@
+Model		- ManagedBean  main scopes are request,session and application
+
+View		- JSP or facelets [ xhtml files ]
+
+Controller	- FacesServlet

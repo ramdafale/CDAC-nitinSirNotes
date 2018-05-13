@@ -1,0 +1,58 @@
+create table actor(id int primary key,name varchar(30));
+
+create table movie(id int primary key,actorName varchar(30),mvName varchar(30));
+
+create table moviesong(id int primary key,movieName varchar(30),songName varchar(30));
+
+
+insert into actor values(1,'Amitabh');
+insert into actor values(2,'SRK');
+insert into actor values(3,'Aamir');
+
+
+
+insert into movie values(1,'Amitabh','Sholay');
+insert into movie values(2,'Amitabh','Lawaaris');
+insert into movie values(3,'Amitabh','Mukaddar_ka_Sikandar');
+insert into movie values(4,'SRK','Baazigar');
+insert into movie values(5,'SRK','DDLJ');
+insert into movie values(6,'SRK','Darr');
+insert into movie values(7,'Aamir','Qayamat_se_Qayamat_tak');
+insert into movie values(8,'Aamir','Dil_Hai_Ke_Maanta_Nahin');
+insert into movie values(9,'Aamir','Hum_Hain_Raahi_Pyaarke');
+
+
+
+
+
+
+insert into moviesong values(1,'Sholay','Yeh dosti');
+insert into moviesong values(2,'Sholay','holi ke din');
+insert into moviesong values(3,'Sholay','Haan jab tak hai jaan');
+insert into moviesong values(4,'Lawaaris','jiska koi nahin');
+insert into moviesong values(5,'Lawaaris','apni to jaise taise');
+insert into moviesong values(6,'Lawaaris','kab ke bicchde huve');
+insert into moviesong values(7,'Mukaddar_ka_Sikandar','rote huve aate hai sab');
+insert into moviesong values(8,'Mukaddar_ka_Sikandar','salaam-e-ishq');
+insert into moviesong values(9,'Mukaddar_ka_Sikandar','o saathi re');
+insert into moviesong values(10,'Baazigar','Baazigar o Baazigar');
+insert into moviesong values(11,'Baazigar','Kitaabein bahoot si');
+insert into moviesong values(12,'Baazigar','yeh kaali kaali aankhen');
+insert into moviesong values(13,'DDLJ','n jaane mere dil ko');
+insert into moviesong values(14,'DDLJ','tujhe dekha to yeh jaana');
+insert into moviesong values(15,'DDLJ','mehendi laga ke rakhana');
+
+insert into moviesong values(16,'Darr','tu mere saamne');
+insert into moviesong values(17,'Darr','jaadu teri nazar');
+insert into moviesong values(18,'Darr','chhota sa ghar');
+
+insert into moviesong values(19,'Qayamat_se_Qayamat_tak','ae mere humsafar');
+insert into moviesong values(20,'Qayamat_se_Qayamat_tak','papa kehte hai');
+insert into moviesong values(21,'Qayamat_se_Qayamat_tak','akele hai to kya ghum hai');
+insert into moviesong values(22,'Dil_Hai_Ke_Maanta_Nahin','Dil Hai Ke Maanta Nahin');
+insert into moviesong values(23,'Dil_Hai_Ke_Maanta_Nahin','dil tujh pe aa gaya');
+insert into moviesong values(24,'Dil_Hai_Ke_Maanta_Nahin','tu pyaar hai kisi aur ka');
+
+insert into moviesong values(25,'Hum_Hain_Raahi_Pyaarke','yun hi katt jaayega');
+insert into moviesong values(26,'Hum_Hain_Raahi_Pyaarke','mujh se mohabbat ka');
+insert into moviesong values(27,'Hum_Hain_Raahi_Pyaarke','Woh meri neend');

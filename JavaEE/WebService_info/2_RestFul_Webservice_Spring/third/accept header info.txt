@@ -1,0 +1,1 @@
+the Accept header is used by HTTP clients to tell the server what content types they'll accept. 

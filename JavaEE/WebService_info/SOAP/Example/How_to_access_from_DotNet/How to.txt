@@ -1,0 +1,66 @@
+go to
+visual studio 2012
+
+file
+	new web site
+
+visual basic
+
+	asp.net empty web site
+
+right click on project and say
+
+add service reference
+
+type
+
+http://localhost:8080/SoapWeb/services/HelloWorld?wsdl
+
+now u can see the web service available.
+
+click "ok".
+
+right click on project
+
+add
+web form
+
+
+
+<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Default.aspx.vb" Inherits="_Default" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head> <script runat="server">
+Sub submitBtn_Click(sender As Object, e As EventArgs)
+               Dim myService As New ServiceReference1.HelloWorldClient
+               
+               wish.Text = myService.sayHelloWorld(name.Text)
+    End Sub
+</script>
+<title>fdfds</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:TEXTBOX id="name" runat="server" width="80" />
+        <br /><br />
+    <asp:TextBox ID="wish" runat="server" Width="230" />
+        <br /><br /><br />
+            <asp:Button id="submitBtn" runat="server" text="Send" onclick="submitBtn_Click" />
+            <BR>
+
+    </form>
+</body>
+</html>
+
+
+
+
+here "ServiceReference1.HelloWorldClient"
+
+ServiceReference1 is a Web service reference created by visual studio.
+
+HelloWorldClient is a stub.
+
+

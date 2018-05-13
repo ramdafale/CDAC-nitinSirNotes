@@ -1,0 +1,43 @@
+StringBuffer is faster than String.
+
+StringBuffer is used when u need to do lots of modifications to your strings.
+
+String is immutable
+
+StringBuffer is mutable
+
+String s1="hello";
+s1+"hi";
+
+s1 will not be modified, rather it will create a new string "hellohi".
+
+thus increasing memory consumption proving the fact that string is immutable.
+
+StringBuffer sb=new StringBuffer("hello");
+
+if we say sb.append("hi");
+
+a new object is not created, rather existing object gets modified. thus reducing memory consumption.
+
+String uses + operator to concate the strings
+
+StringBuffer uses "concat" to do the same.
+
+String + operator uses 
+	StringBuffer internally
+	call append
+	again convert StringBuffer to String
+
+
+Conclusion:
+
+	It is always recommended to work with StringBuffer
+		a) it is faster
+		b) less memory consumption
+
+
+
+
+
+
+

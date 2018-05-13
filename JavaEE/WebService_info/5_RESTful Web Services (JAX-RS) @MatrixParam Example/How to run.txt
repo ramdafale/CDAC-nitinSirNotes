@@ -1,0 +1,3 @@
+go to crome
+
+http://localhost:84/Rest_MatrixParam/rest/customers;nameKey=Abc;countryKey=USA;department=acc

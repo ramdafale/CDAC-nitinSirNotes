@@ -1,0 +1,7 @@
+ public static Integer valueOf(int i) {
+        if (i >= IntegerCache.low && i <= IntegerCache.high)
+            return IntegerCache.cache[particular element];
+        return new Integer(i);
+    }
+
+

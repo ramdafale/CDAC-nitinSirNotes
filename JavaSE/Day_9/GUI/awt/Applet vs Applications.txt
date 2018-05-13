@@ -1,0 +1,11 @@
+1. Applets can be embedded in HTML pages and downloaded 
+over the Internet whereas Applications have no special support in HTML for embedding or downloading.
+
+2. Applets can only be executed inside a java compatible 
+container, such as a browser or appletviewer whereas Applications are executed at command line by java.exe.
+
+3. Applets execute under strict security limitations that 
+disallow certain operations e.g. read/write files, socket communications etc. whereas Applications have no security restrictions.
+
+4. Applets don’t have the main() method as in applications. 
+Instead they operate on an entirely different mechanism where they are initialized by init(),started by start(),stopped by stop() or destroyed by destroy().

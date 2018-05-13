@@ -1,0 +1,1 @@
+invoking "writeExternal" and "readExternal" explicitly on "base" and "part".
